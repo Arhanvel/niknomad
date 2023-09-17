@@ -1,0 +1,15 @@
+<x-layout>
+    <x-setting header="Publish New Post">
+        <form action="/admin/posts" method="post" enctype="multipart/form-data">
+            @csrf
+
+            <x-form.input name="title"/>
+            <x-form.input name="thumbnail" type="file"/>
+            <x-form.textarea name="excerpt"/>
+            <x-form.textarea name="body"/>
+            <x-form.select name="category" :itemlist="$categories"/>
+
+            <x-form.button>Publish</x-form.button>
+        </form>
+    </x-setting>
+</x-layout>
