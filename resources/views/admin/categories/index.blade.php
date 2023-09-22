@@ -1,6 +1,22 @@
 <x-layout>
     <x-setting header="Manage Categories">
         <div class="flex flex-col">
+            <form method="POST" action="/admin/categories">
+                @csrf
+
+                <div class="flex items-center">
+                    <label for="cat_name" class="uppercase font-bold text-xs text-gray-700">Category Name:</label>
+                    <input class="border border-gray-400 p-2 rounded ml-4"
+                           type="text"
+                           name="name"
+                           id="cat_name"
+                           required
+                    >
+                    <button type="submit" class="bg-green-500 text-white uppercase font-semibold text-md py-2 px-10 rounded-2xl hover:bg-green-700 ml-4">
+                        Add New
+                    </button>
+                </div>
+            </form>
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
