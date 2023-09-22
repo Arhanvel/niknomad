@@ -12,4 +12,16 @@
             <x-form.button>Publish</x-form.button>
         </form>
     </x-setting>
+
+    @push('scripts')
+        <script src="/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+            tinymce.init({
+                selector: '#body'
+            });
+            tinymce.init({
+                selector: '#excerpt'
+            });
+        </script>
+    @endpush
 </x-layout>

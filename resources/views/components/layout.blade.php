@@ -12,6 +12,8 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
         <link rel="manifest" href="/images/site.webmanifest">
 
+        @stack('scripts')
+
         <style>
             html {
                 scroll-behavior: smooth;
