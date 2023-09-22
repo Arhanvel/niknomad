@@ -10,10 +10,10 @@
 
             <ul class="space-y-4">
                 <li>
-                    <a href="/admin/dashboard" class="{{ request()->is('admin/dashboard') ? 'text-blue-500' : '' }}">Dashboard</a>
+                    <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">Manage Posts</a>
                 </li>
                 <li>
-                    <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">Manage Posts</a>
+                    <a href="/admin/categories" class="{{ request()->is('admin/categories') ? 'text-blue-500' : '' }}">Manage Categories</a>
                 </li>
                 <li>
                     <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
