@@ -58,7 +58,7 @@
 
             {{ $slot }}
 
-            <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
+            <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16 fixed bottom-0 left-0 w-full">
                 <img src="/images/avatar.jpg" alt="newsletter icon" width="140" height="140" class="m-auto rounded-3xl">
                 <h5 class="text-2xl">Stay in touch with the latest posts</h5>
                 <p class="text-sm">Promise to keep inbox clean. No spam.</p>
