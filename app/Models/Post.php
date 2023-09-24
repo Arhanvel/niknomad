@@ -19,7 +19,7 @@ class Post extends Model
         'thumbnail'
     ];
 
-    protected $with = ['category', 'author'];
+    protected $with = ['category', 'author', 'tags'];
 
     public function category()
     {
@@ -36,6 +36,11 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, fn($query, $search) =>
@@ -50,6 +55,13 @@ class Post extends Model
                 $query->where('slug', $category)
             )
         );
+
+        $query->when($filters['tags'] ?? false, function ($query, $slug) {
+            $tag = Tag::where('slug', $slug)->first();
+            return $query->whereHas('tags', fn($query) =>
+                $query->where('tag_id', $tag->id)
+            );
+        });
 
         $query->when($filters['author'] ?? false, fn($query, $author) =>
             $query->whereHas('author', fn($query) =>

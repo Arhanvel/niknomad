@@ -1,13 +1,13 @@
 @props(['name', 'itemlist', 'selectedValue' => old($name)])
 
 <x-form.field>
-    <x-form.label name="{{ $name }}" for="{{$name}}_id"/>
+    <x-form.label name="{{ $name }}"/>
 
-    <select name="{{$name}}_id" id="{{$name}}_id">
+    <select name="{{$name}}[]" id="{{$name}}" multiple>
         @foreach($itemlist as $item)
             <option
                 value="{{ $item->id }}"
-                {{ $selectedValue === $item->id ? 'selected' : ''}}
+                {{ $selectedValue->contains($item) ? 'selected' : ''}}
             >{{ ucwords($item->name) }}</option>
         @endforeach
     </select>

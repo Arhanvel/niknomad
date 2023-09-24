@@ -39,6 +39,7 @@
                             @admin
                                 <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Manage Posts</x-dropdown-item>
                                 <x-dropdown-item href="/admin/categories" :active="request()->is('admin/categories')">Manage Categories</x-dropdown-item>
+                                <x-dropdown-item href="/admin/tags" :active="request()->is('admin/tags')">Manage Tags</x-dropdown-item>
                                 <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
                             @endadmin
 

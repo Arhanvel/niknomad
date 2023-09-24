@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -22,13 +23,16 @@ class PostController extends Controller
     public function create()
     {
         return view('admin.posts.create', [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'tags' => Tag::all()
         ]);
     }
 
     public function store(Request $request)
     {
         $post = Post::create($this->preparePost($request));
+
+        $this->processTags($request, $post);
 
         return redirect("/posts/$post->slug")->with(['success' => 'Post Created']);
     }
@@ -37,13 +41,16 @@ class PostController extends Controller
     {
         return view('admin.posts.edit', [
             'post' => $post,
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'tags' => Tag::all()
         ]);
     }
 
     public function update(Request $request, Post $post)
     {
         $post->update($this->preparePost($request, $post));
+
+        $this->processTags($request, $post);
 
         return redirect("/posts/$post->slug")->with(['success' => 'Post Updated']);
     }
@@ -69,7 +76,8 @@ class PostController extends Controller
             'thumbnail' => $post->exists ? 'image' : 'required|image',
             'excerpt' => 'required',
             'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+            'tags' => 'array|required'
         ]);
 
         $attributes['user_id'] = Auth::id();
@@ -79,5 +87,14 @@ class PostController extends Controller
         }
 
         return $attributes;
+    }
+
+    protected function processTags(Request $request, Post $post): void
+    {
+        $attributes = $request->validate([
+            'tags' => 'array|required'
+        ]);
+
+        $post->tags()->sync($attributes['tags']);
     }
 }

@@ -11,6 +11,11 @@
             <x-category-dropdown />
         </span>
 
+        <!-- Tags -->
+        <span class="bg-gray-100 inline-block rounded-xl inline-flex relative items-center">
+            <x-tag-dropdown />
+        </span>
+
         <span class="bg-gray-100 inline-block rounded-xl inline-flex relative items-center">
             <form action="/" method="GET">
                 @if(request('category'))

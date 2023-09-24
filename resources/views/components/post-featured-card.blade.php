@@ -10,6 +10,10 @@
             <header>
                 <div class="space-x-3">
                     <x-category-button :category="$post->category"/>
+
+                    @foreach($post->tags as $tag)
+                        <x-tag-button :tag="$tag"/>
+                    @endforeach
                 </div>
 
                 <div class="mt-4">

@@ -16,6 +16,9 @@
                     <a href="/admin/categories" class="{{ request()->is('admin/categories') ? 'text-blue-500' : '' }}">Manage Categories</a>
                 </li>
                 <li>
+                    <a href="/admin/tags" class="{{ request()->is('admin/tags') ? 'text-blue-500' : '' }}">Manage Tags</a>
+                </li>
+                <li>
                     <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">New Post</a>
                 </li>
             </ul>

@@ -15,6 +15,7 @@
             <x-form.textarea name="excerpt" :text="$post->excerpt"/>
             <x-form.textarea name="body" :text="$post->body"/>
             <x-form.select name="category" :itemlist="$categories" :selectedValue="$post->category_id"/>
+            <x-form.multiselect name="tags" :itemlist="$tags" :selectedValue="$post->tags"/>
 
             <x-form.button>Update</x-form.button>
         </form>
