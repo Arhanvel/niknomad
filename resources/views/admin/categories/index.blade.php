@@ -1,11 +1,11 @@
 <x-layout>
-    <x-setting header="Manage Categories">
+    <x-setting header="Управление категориями">
         <div class="flex flex-col">
             <form method="POST" action="/admin/categories">
                 @csrf
 
                 <div class="flex items-center">
-                    <label for="cat_name" class="uppercase font-bold text-xs text-gray-700">Category Name:</label>
+                    <label for="cat_name" class="uppercase font-bold text-xs text-gray-700">Название категории:</label>
                     <input class="border border-gray-400 p-2 rounded ml-4"
                            type="text"
                            name="name"
@@ -13,7 +13,7 @@
                            required
                     >
                     <button type="submit" class="bg-green-500 text-white uppercase font-semibold text-md py-2 px-10 rounded-2xl hover:bg-green-700 ml-4">
-                        Add New
+                        Добавить
                     </button>
                 </div>
             </form>
@@ -38,7 +38,7 @@
                                                 >
 
                                                 <button type="submit" class="bg-blue-500 text-white uppercase font-semibold text-md py-2 px-10 rounded-2xl hover:bg-blue-700 ml-4">
-                                                    Update
+                                                    Обновить
                                                 </button>
                                             </div>
                                         </form>
@@ -49,7 +49,7 @@
                                             @csrf
                                             @method('DELETE')
 
-                                            <button class="text-md text-white uppercase bg-red-500 rounded-2xl hover:bg-red-600 px-4 py-2">Delete</button>
+                                            <button class="text-md text-white uppercase bg-red-500 rounded-2xl hover:bg-red-600 px-4 py-2">Удалить</button>
                                         </form>
                                     </td>
                                 </tr>

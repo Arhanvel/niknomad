@@ -1,7 +1,7 @@
 <header class="max-w-4xl mx-auto mt-20 text-center">
     <div class="max-w-xl mx-auto">
         <h1 class="text-4xl">
-            Welcome to <span class="text-blue-500">digital nomad</span> blog
+            Добро пожаловать в блог <span class="text-blue-500">цифрового кочевника</span>
         </h1>
     </div>
 
@@ -24,7 +24,7 @@
 
                 <input type="text"
                        name="search"
-                       placeholder="Find something"
+                       placeholder="Поиск..."
                        class="bg-transparent rounded-xl py-2 px-3 outline-none placeholder-black font-semibold text-sm"
                        value="{{ request('search') }}"
                 >

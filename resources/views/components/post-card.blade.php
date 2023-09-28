@@ -24,7 +24,7 @@
                         </a>
                     </h1>
                     <span class="mt-2 block text-gray-400 text-xs">
-                        Published <time>{{ $post->created_at->diffForHumans() }}</time>
+                        Опубликовано <time>{{ $post->created_at->diffForHumans() }}</time>
                     </span>
 
                 </div>
@@ -41,13 +41,13 @@
                         <h5 class="font-bold">
                             <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }} </a>
                         </h5>
-                        <h6>Travel expert</h6>
+                        <h6>Цифровой кочевник</h6>
                     </div>
                 </div>
 
                 <div class="hidden lg:block">
                     <a href="/posts/{{ $post->slug }}" class="text-xs font-semibold bg-gray-300 rounded-full py-2 px-7">
-                        Read more
+                        Читать далее
                     </a>
                 </div>
             </footer>

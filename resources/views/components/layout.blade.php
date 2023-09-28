@@ -33,29 +33,28 @@
                     @auth
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <button class="text-xs text-black font-bold uppercase">Welcome, {{ auth()->user()->name }}</button>
+                                <button class="text-xs text-black font-bold uppercase">Добро пожаловать, {{ auth()->user()->name }}</button>
                             </x-slot>
 
                             @admin
-                                <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Manage Posts</x-dropdown-item>
-                                <x-dropdown-item href="/admin/categories" :active="request()->is('admin/categories')">Manage Categories</x-dropdown-item>
-                                <x-dropdown-item href="/admin/tags" :active="request()->is('admin/tags')">Manage Tags</x-dropdown-item>
-                                <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
+                                <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">Управление постами</x-dropdown-item>
+                                <x-dropdown-item href="/admin/categories" :active="request()->is('admin/categories')">Управление категориями</x-dropdown-item>
+                                <x-dropdown-item href="/admin/tags" :active="request()->is('admin/tags')">Управление тегами</x-dropdown-item>
+                                <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">Новый пост</x-dropdown-item>
                             @endadmin
 
-                            <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
+                            <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Выход</x-dropdown-item>
 
                             <form id="logout-form" method="POST" action="/logout" class="hidden">
                                 @csrf
                             </form>
                         </x-dropdown>
                     @else
-                        <a href="/register" class="text-xs text-black font-bold uppercase">Register</a>
-                        <a href="/login" class="text-xs text-black font-bold uppercase ml-6">Log in</a>
+                        <a href="/register" class="text-xs text-black font-bold uppercase">Регистрация</a>
+                        <a href="/login" class="text-xs text-black font-bold uppercase ml-6">Вход</a>
                     @endauth
                     <a href="#newsletter"
-                       class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 ml-2 rounded-full text-xs font-bold text-white uppercase py-3 px-4">Subscribe
-                        for updates</a>
+                       class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 ml-4 rounded-full text-xs font-bold text-white uppercase py-3 px-4">Подпишись на обновления</a>
                 </div>
             </nav>
 
@@ -63,8 +62,8 @@
 
             <footer id="newsletter" class="bg-gray-100 border border-black border-opacity-5 rounded-xl text-center py-16 px-10 mt-16">
                 <img src="/images/avatar.jpg" alt="newsletter icon" width="140" height="140" class="m-auto rounded-3xl">
-                <h5 class="text-2xl">Stay in touch with the latest posts</h5>
-                <p class="text-sm">Promise to keep inbox clean. No spam.</p>
+                <h5 class="text-2xl">Получай уведомления о новых постах</h5>
+                <p class="text-sm">Только важные письма. Никакого спама</p>
 
                 <div class="mt-10">
                     <div class="relative inline-block mx-auto md:bg-gray-300 rounded-full ">
@@ -76,13 +75,13 @@
                                 <label for="email" class="hidden md:inline-block">
                                     <img src="/images/mail.svg" height="24" width="24" alt="" class="fill-gray-600">
                                 </label>
-                                <input id="email" name="email" type="email" placeholder="Your Email Address"
+                                <input id="email" name="email" type="email" placeholder="Ваш email-адрес"
                                        class="md:bg-transparent pl-4 outline-none">
                             </div>
 
                             <button type="submit"
                                     class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 md:ml-3 mt-4 md:mt-0 rounded-full text-xs font-bold text-white uppercase py-4 px-8">
-                                Subscribe
+                                Подписаться
                             </button>
                         </form>
 

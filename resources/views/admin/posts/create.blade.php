@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting header="Publish New Post">
+    <x-setting header="Создать новый пост">
         <form action="/admin/posts" method="post" enctype="multipart/form-data">
             @csrf
 
@@ -10,7 +10,7 @@
             <x-form.select name="category" :itemlist="$categories"/>
             <x-form.multiselect name="tags" :itemlist="$tags" :selectedValue="$post->tags"/>
 
-            <x-form.button>Publish</x-form.button>
+            <x-form.button>Опубликовать</x-form.button>
         </form>
     </x-setting>
 

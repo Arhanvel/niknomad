@@ -4,8 +4,8 @@
             <div class="col-span-4 text-center">
                 <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="" class="rounded-xl">
                 <p class="mt-4 block text-gray-400 text-xs">
-                    Published
-                    <time>{{ $post->created_at->format("F j, Y, g:i a") }}</time>
+                    Опубликовано:
+                    <time>{{ $post->created_at->translatedFormat("F j, Y, g:i a") }}</time>
                 </p>
 
                 <div class="flex items-center text-sm justify-center mt-4">
@@ -14,7 +14,7 @@
                         <h5 class="font-bold">
                             <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }} </a>
                         </h5>
-                        <h6>Travel expert</h6>
+                        <h6>Цифровой кочевник</h6>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <x-layout>
-    <x-setting :header="'Edit Post: ' . $post->title">
+    <x-setting :header="'Редактировать пост: ' . $post->title">
         <form action="/admin/posts/{{ $post->id }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
@@ -17,7 +17,7 @@
             <x-form.select name="category" :itemlist="$categories" :selectedValue="$post->category_id"/>
             <x-form.multiselect name="tags" :itemlist="$tags" :selectedValue="$post->tags"/>
 
-            <x-form.button>Update</x-form.button>
+            <x-form.button>Обновить</x-form.button>
         </form>
     </x-setting>
 

@@ -7,7 +7,7 @@
 
             {{ $posts->links() }}
         @else
-            <p class="text-center w-full text-lg">No posts yet. Please check back later</p>
+            <p class="text-center w-full text-lg">Здесь ничего нет. Попробуйте заглянуть позднее</p>
         @endif
     </main>
 </x-layout>
