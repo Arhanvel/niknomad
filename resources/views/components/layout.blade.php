@@ -1,6 +1,21 @@
 <!doctype html>
 <html>
     <head>
+        <!-- Google tag (gtag.js) -->
+        @php
+            $tag = env('GOOGLE_TAG');
+        @endphp
+        @if(!request()->is('admin/*'))
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{$tag}}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-QGGHKQYJ25');
+            </script>
+        @endif
+
         <title>Nik Digital Nomad Blog</title>
         <link href="/style/tailwind.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
