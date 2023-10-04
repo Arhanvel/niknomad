@@ -8,7 +8,7 @@
             <x-form.textarea name="excerpt"/>
             <x-form.textarea name="body"/>
             <x-form.select name="category" :itemlist="$categories"/>
-            <x-form.multiselect name="tags" :itemlist="$tags" :selectedValue="$post->tags"/>
+            <x-form.multiselect name="tags" :itemlist="$tags"/>
 
             <x-form.button>Опубликовать</x-form.button>
         </form>

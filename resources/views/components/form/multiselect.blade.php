@@ -7,7 +7,7 @@
         @foreach($itemlist as $item)
             <option
                 value="{{ $item->id }}"
-                {{ $selectedValue->contains($item) ? 'selected' : ''}}
+                {{ $selectedValue ? $selectedValue->contains($item) ? 'selected' : '' : ''}}
             >{{ ucwords($item->name) }}</option>
         @endforeach
     </select>
